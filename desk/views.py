@@ -14,7 +14,7 @@ def index(request):
 def answer_post(request,pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
-        form = PostForm(request.POST, instance=post)
+        form = AnswerForm(request.POST,instance=post)
         if form.is_valid():
             post = form.save(commit=False)
             post.created_date=timezone.now()
