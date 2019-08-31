@@ -1,0 +1,23 @@
+{% extends 'desk/base.html' %}
+{% block content %}
+	<div>
+		<h2 align="center">Add Your Question
+		<a href="{% url 'question_post' %}" class="btn btn-info btn-lg">  <span class="glyphicon glyphicon-plus"></span>Plus</a>
+		<hr>
+		</h2>
+	</div>
+	{% for items in post %}
+		<div>
+			<h3> Edit 
+			<a class="btn btn-default" href="{% url 'post_edit' pk=items.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+		    </h3>
+			<p class="author">Author: {{items.author}} </p>
+			<p class="question"> Question :{{ items.question }} </p>
+			<p class="answer"> Answer : {{items.answer|linebreaksbr}} </p>
+			<a href="{% url 'answer_post' pk=items.pk %}" class="btn btn-info btn-lg">
+               <span class="glyphicon glyphicon-upload"></span> Answer
+            </a>
+			<hr>
+		</div>
+	{% endfor %}		
+{% endblock %}

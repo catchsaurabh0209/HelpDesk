@@ -1,0 +1,11 @@
+{% extends 'desk/base.html' %}
+
+{% block content %}
+    <h2>New Answer Post</h2>
+    <h5>Notice: Try to be technical and descriptive while writting the answer. </h5>
+    
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Submit</button>
+    </form>
+{% endblock %}

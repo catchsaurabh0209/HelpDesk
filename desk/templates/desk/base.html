@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Help Desk</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="{% static 'css/desk.css' %}">
+</head>
+<body>
+	<div class="page-header">
+		<h1 align="center"><a href="{% url 'index' %}"> Help Desk </h1></a>
+		<h2 class='header-content' align="center"> Hi all welcome to help desk :) </h2>	
+		<h2 class="header-content" align="center">Plz dump ur Questions Here :)</h2>
+	</div>	
+	{% block content %}
+	{% endblock %}
+</body>
+</html>
