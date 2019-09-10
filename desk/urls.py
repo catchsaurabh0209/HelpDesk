@@ -8,7 +8,7 @@ urlpatterns = [
     path('post/question/', views.question_post, name='question_post'),
     path('login/', views.login, name='login'),
     path('user/', views.user, name='user'),
-    path('boom/', views.boom, name='boom'),
+    
 
 
 ]

@@ -23,7 +23,7 @@ def answer_post(request,pk):
     else:
         form = AnswerForm(instance=post)
     return render(request, 'desk/answer_post.html', {'form': form})
-                
+
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
@@ -35,12 +35,12 @@ def post_edit(request, pk):
             return redirect('index')
     else:
         form = PostForm(instance=post)
-    return render(request, 'desk/post_edit.html', {'form': form})        
+    return render(request, 'desk/post_edit.html', {'form': form})
 
 
 def question_post(request):
     if request.method =='POST':
-        form=QuestionForm(request.POST)    
+        form=QuestionForm(request.POST)
         if form.is_valid():
             post=form.save(commit=False)
             post.created_date=timezone.now()
@@ -48,15 +48,14 @@ def question_post(request):
             return redirect('index')
     else:
         form =QuestionForm()
-        return render(request,'desk/question_post.html',{'form':form})        
+        return render(request,'desk/question_post.html',{'form':form})
 
 
 
 def user(request):
-    return render(request, 'desk/user.html')        
+    return render(request, 'desk/user.html')
 
 def login(request):
-    return render(request,'desk/login.html')    
+    return render(request,'desk/login.html')
 
-def boom(request):
-    return render(request,'desk/boom.html')    
+   
