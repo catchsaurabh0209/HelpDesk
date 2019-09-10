@@ -1,0 +1,9 @@
+{% extends "desk/base.html" %}
+
+{% block content %}
+	{% if user.is_authenticated %}
+             <h1 class="display-4"><strong>Hello, {{ user.username }}</strong></h1>
+	{% else %}
+             <a class="lead" href="{% url 'login' %}">Log in</a>
+	{% endif %}
+{% endblock content %}

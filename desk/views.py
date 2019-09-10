@@ -49,3 +49,14 @@ def question_post(request):
     else:
         form =QuestionForm()
         return render(request,'desk/question_post.html',{'form':form})        
+
+
+
+def user(request):
+    return render(request, 'desk/user.html')        
+
+def login(request):
+    return render(request,'desk/login.html')    
+
+def boom(request):
+    return render(request,'desk/boom.html')    
